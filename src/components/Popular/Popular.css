@@ -1,0 +1,119 @@
+.mostPopular{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.headerMostPopular{
+    width: 68%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 15px;
+    column-gap: 30px;
+    color: white;
+}
+.select{
+    width: auto;
+    border-radius: 20px;
+    border: 1px rgb(83, 83, 83) solid;
+    padding: 2px 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.select span{
+    font-size: 12px;
+}
+.selectActive{
+    width: fit-content;
+    background-color: #555050;
+    border-radius: 20px;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.filmBtn , .serialBtn{
+    cursor: pointer;
+}
+
+/* serial */
+.serialsMostPopular {
+    width: 68%;
+    padding: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+    justify-content: space-between;
+    box-shadow: 0px 70px 20px rgb(0, 0, 0);
+}
+.serialsMostPopular>div{
+    transform: scale(90%);
+    opacity: .6;
+    transition: 500ms;
+    cursor: pointer;
+}
+.serialsMostPopular>div>img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.firstCover{
+    border: 1px whitesmoke solid;
+    border-radius: 10px;
+    transform: scale(100%)!important;
+    opacity: 1 !important;
+}
+.serialsMostPopular>div:hover{
+    opacity: 1;
+}
+.special{
+    width: 65% !important;
+    display: block;
+    position: absolute;
+    top: 90%;
+    right: 18%;
+    background-color: #2b2b2bdd;
+}
+
+/* film */
+.filmsMostPopular{
+    width: 68%;
+    padding: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+    justify-content: space-between;
+    display: none;
+}
+.filmsMostPopular>div{
+    transform: scale(90%);
+    opacity: .6;
+    transition: 500ms;
+    cursor: pointer;
+}
+.filmsMostPopular>div>img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    /* position: relative; */
+}
+.firstCover{
+    border: 1px whitesmoke solid;
+    border-radius: 10px;
+    transform: scale(100%)!important;
+    opacity: 1 !important;
+}
+.filmsMostPopular>div:hover{
+    opacity: 1;
+}
+
+.notActive{
+    display: none !important;
+}
+.active{
+    display: flex !important;
+}

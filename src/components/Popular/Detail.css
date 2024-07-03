@@ -1,0 +1,114 @@
+.detailsBox {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .serialDetail {
+    width: 84%;
+    flex-direction: ltr !important;
+    background-size: cover;
+    background-image: url("../../../public/images/serialDetail/oscar.webp");
+    opacity: 0.8;
+    box-shadow: 50px 50px -25px #000000;
+  }
+  .detail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+    justify-content: flex-start;
+  }
+  .upDetail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .upDetail > .right {
+    width: auto;
+    padding: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 15px;
+    max-width: 750px;
+  }
+  .upDetail > .right > h4 {
+    color: white;
+    font-weight: bold;
+  }
+  .upDetail > .right > span {
+    color: gray;
+    font-size: 12px;
+  }
+  .upDetail > .right .type {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 20px;
+  }
+  .upDetail > .right .type > span {
+    color: white;
+    font-size: 11px;
+    padding: 2px 12px;
+    background-color: rgb(70, 69, 69);
+    border-radius: 20px;
+    text-align: center;
+  }
+  .upDetail > .right > p {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    font-size: 13px;
+  }
+  .upDetail > .left {
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+  }
+  .upDetail > .left > img {
+    width: 25%;
+    height: 55%;
+    display: block;
+  }
+  
+  .downDetail {
+    width: 80%;
+  }
+  .downDetail>.swiper>.swiper-wrapper>.swiper-slide{
+      background-color: transparent;
+      width: 300px !important;
+      display: flex;
+      flex-flow: column nowrap;
+      row-gap: 20px;
+  }
+  .downDetail>.swiper>.swiper-wrapper>.swiper-slide>img{
+      background-color: blue;
+      border-radius: 10px;
+      box-shadow: none !important;
+      cursor: pointer;
+  }
+  .downDetail>.swiper>.swiper-wrapper>.swiper-slide>span{
+      color: white;
+      font-size: 13px;
+      text-align: right;
+      width: 90%;
+  }
+  
+  .private{
+      filter: grayscale(0.5) blur(4px);
+  }
+  
+  .swiper-button-next, .swiper-button-prev{
+      width: 35px;
+      height: 35px;
+      background-color: rgb(37, 37, 37);
+      border-radius: 50%;
+      color: rgb(110, 109, 109);
+  
+  }
+  .swiper-button-next:after, .swiper-button-prev:after{
+      font-size: 20px !important;
+  }
