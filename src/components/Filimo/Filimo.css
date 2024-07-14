@@ -1,0 +1,47 @@
+.filimo{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px 80px 0px;
+    background: radial-gradient(100% 410.68% at 100% 100%,rgba(0,0,0,0) 0,rgba(0,29,13,.54) 53.55%,rgba(0,0,0,0) 100%);
+}
+.filimoMain{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 10px;
+    align-items: center;
+}
+.filimoIcon{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.filimoDescription{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.filimoDescription>span{
+    color: rgb(165, 164, 164);
+    font-size: 14px;
+}
+.filimoBtn{
+    width: fit-content;
+    background-color: #1CB561;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 15px 60px;
+    font-weight: lighter;
+    margin-top: -30px;
+    transition: 300ms;
+}
+.filimoBtn:hover{
+    background-color: #1CB561dd;
+}

@@ -4,6 +4,11 @@ import Popular from "../../components/Popular/Popular";
 import Watch from "../../components/Watch/Watch"
 import Learn from "../../components/Learn/Learn";
 import Free from "../../components/Free/Free";
+import World from "../../components/World/World";
+import Online from "../../components/Online/Online";
+import Comments from "../../components/Comments/Comments";
+import Questions from "../../components/Questions/Questions";
+import Filimo from "../../components/Filimo/Filimo";
 
 
 const Home = () => {
@@ -25,6 +30,11 @@ const Home = () => {
       <Watch API={API}/>
       <Learn API={API}/>
       <Free API={API}/>
+      <World API={API}/>
+      <Online API={API}/>
+      <Comments API={API}/>
+      <Questions API={API}/>
+      <Filimo API={API}/>
     </>
   );
 };

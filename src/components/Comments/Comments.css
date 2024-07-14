@@ -1,0 +1,47 @@
+.comments{
+    width: 100%;
+    margin-top: -15%;
+    display: flex;
+    justify-content: center;
+}
+.commentMain{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+}
+.commentMain>h2{
+    font-size: 18px;
+    color: white;
+    font-weight: lighter;
+}
+.commentsSwiper>.swiper-wrapper>.swiper-slide{
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    border: 1px rgb(83, 83, 83) solid;
+    color: white;
+    height: 200px;
+}
+.info{
+    height: inherit ;
+    display: grid;
+    grid-template-rows: 40% 80%;
+    align-content: right;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+.info>h3{
+    display: flex;
+    color: rgb(110, 110, 110);
+    font-size: 15px;
+    text-align: right;
+    align-items: center;
+}
+.info>p{
+    color: whitesmoke;
+    font-size: 14px;
+    /* overflow-y: scroll; */
+    font-weight: lighter;
+    text-align: right;
+}
