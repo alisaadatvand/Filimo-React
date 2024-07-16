@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Menu.css";
 import logo from "../../assets/fa-filimo-dark-logo-CSUi6aT1.svg"
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
   let [Menu, setMenu] = useState();
@@ -26,8 +27,9 @@ const Menu = () => {
             <img src={logo} alt="" />
             <li>|</li>
             {Menu?.menu.map((elem) => {
-              return <li key={elem.id}><a href={elem.link}>{elem.name}</a></li>
+              return <li key={elem.id}><NavLink to={elem.link}>{elem.name}</NavLink></li>
             })}
+            <li><NavLink to="/slider">اسلایدر</NavLink></li>
           </ul>
           <ul className="menu-left">
             <li className="Subscription">

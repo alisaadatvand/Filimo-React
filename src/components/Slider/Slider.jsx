@@ -10,17 +10,18 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import SliderContent from "./SliderContent";
 
 const Slider = ({API}) => {
-//   let [Slider, setSlider] = useState(null);
-//   const fetchSlider = async () => {
-//     let sliderData = await fetch(
-//       "https://alisaadatvand.github.io/jsonServer/db.json"
-//     );
-//     let sliderRes = await sliderData.json();
-//     setSlider(sliderRes);
-//   };
-//   useEffect(() => {
-//     fetchSlider();
-//   }, []);
+  let [Slider, setSlider] = useState(null);
+  const fetchSlider = async () => {
+    let sliderData = await fetch(
+      "http://localhost:1000/slider"
+    );
+    let sliderRes = await sliderData.json();
+    setSlider(sliderRes);
+  };
+  useEffect(() => {
+    fetchSlider();
+  }, []);
+  console.log(Slider);
 
   return (
     <>
@@ -35,7 +36,7 @@ const Slider = ({API}) => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper opacity"
         >
-          {API?.slider.map((elem) => {
+          {Slider?.map((elem) => {
             return (
               <SwiperSlide key={elem.id}>
                 <img src={elem.src} alt={elem.alt} />

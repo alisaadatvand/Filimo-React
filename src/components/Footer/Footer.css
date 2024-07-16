@@ -2,6 +2,8 @@ footer{
     width: 99%;
     height: 25px;
     background-color: #191919;
+    position: fixed;
+    bottom: 0;
 }
 footer>nav{
     width: inherit;
