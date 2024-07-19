@@ -29,7 +29,6 @@ const Menu = () => {
             {Menu?.menu.map((elem) => {
               return <li key={elem.id}><NavLink to={elem.link}>{elem.name}</NavLink></li>
             })}
-            <li><NavLink to="/slider">اسلایدر</NavLink></li>
           </ul>
           <ul className="menu-left">
             <li className="Subscription">

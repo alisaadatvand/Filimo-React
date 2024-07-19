@@ -27,7 +27,7 @@ const Form = ({ slider }) => {
       }
     };
     updateSlider();
-    navigate("/slider/details");
+    navigate("/slider");
   };
   useEffect(() => {
     setImage(slider.src);

@@ -1,4 +1,17 @@
 import "./Detail.css";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import 'swiper/css/navigation';
+import "swiper/css/pagination";
+
+
+// import required modules
+import { FreeMode, Navigation } from "swiper/modules";
 
 const Detail = ({ API }) => {
   return (
@@ -25,13 +38,28 @@ const Detail = ({ API }) => {
             );
           })}
           <div className="downDetail">
-            <div className="swiper serialSwiper">
-              <div className="swiper-wrapper ali">
-                <h1>swiper</h1>
-              </div>
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
-            </div>
+            <Swiper
+            navigation={true}
+              slidesPerView={3}
+              spaceBetween={60}
+              freeMode={true}
+              modules={[FreeMode, Navigation]}
+              className="mySwiper"
+            >
+              {API?.swiperserial1.map((elem)=>{
+              if(elem.id==1){
+                return <SwiperSlide key={elem.id}>
+                <img src={elem.src} alt="" />
+                <span>{elem.title}</span>
+              </SwiperSlide>
+              }else{
+                return <SwiperSlide key={elem.id}>
+                <img className="private" src={elem.src} alt="" />
+                <span>{elem.title}</span>
+              </SwiperSlide>
+              }
+              })}
+            </Swiper>
           </div>
         </div>
       </div>

@@ -1,0 +1,46 @@
+div.panel{
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50% , -50%);
+    background-color: whitesmoke;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 5px 5px 35px black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    h3{
+        font-size: 16px;
+    }
+    h5{
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-top: 10px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        li{
+            width: inherit;
+            a{
+                text-decoration: none;
+                color: gray;
+                transition: 300ms;
+            }
+            &:hover>a{
+                color: black;
+            }
+        }
+    }
+}

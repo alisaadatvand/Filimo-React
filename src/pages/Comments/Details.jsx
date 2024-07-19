@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Delete from "./Delete";
-import "./css/index.css";
 
 const Details = () => {
   let [details, setDetails] = useState(null);
   const fetchDetails = async () => {
     try {
-      let data = await fetch("http://localhost:1000/slider");
+      let data = await fetch("http://localhost:1000/comments");
       let res = await data.json();
       setDetails(res);
     } catch (error) {
@@ -19,18 +18,13 @@ const Details = () => {
   }, []);
   return (
     <div className="details">
-        <h1>جزئیات اسلایدرها</h1>
-        <Link
-          className="createBtn btn"
-          to="/slider/create"
-        >
-          ایجاد اسلایدر جدید
-        </Link>
+        <h1>جزئیات نظرات</h1>
         <table cellSpacing={0}>
           <thead>
             <tr>
-              <td>تصویر</td>
-              <td>توضیح</td>
+              <td>کاربر</td>
+              <td>متن کامنت</td>
+              <td>وضعیت</td>
               <td>ویرایش</td>
               <td>حذف</td>
             </tr>
@@ -40,13 +34,16 @@ const Details = () => {
               return (
                 <tr key={item.id}>
                   <td>
-                    <img src={item.src} width="150px" />
+                    {item.name}
                   </td>
-                  <td>{item.alt}</td>
+                  <td>{item.text}</td>
+                  <td>
+                    {item.status=="1"? "منتشر شده":"منتظر بررسی"}
+                  </td>
                   <td>
                     <Link
                       className="editBtn btn"
-                      to={`/slider/edit/${item.id}`}
+                      to={`/comment/edit/${item.id}`}
                     >
                       ویرایش
                     </Link>

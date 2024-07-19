@@ -1,16 +1,25 @@
 import "./Free.css";
-import React from 'react';
+import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Navigation } from "swiper/modules";
+
+let test = (e) => {
+  console.log(e.target.classList);
+  if (e.target.classList.contains("freeActive")) {
+    e.target.classList.remove("freeActive");
+  } else {
+    e.target.classList.add("freeActive");
+  }
+};
 
 const Free = ({ API }) => {
   return (
@@ -21,33 +30,23 @@ const Free = ({ API }) => {
             return <h1 key={elem.id}>{elem.title}</h1>;
           })}
           <div className="freeSlider">
-            <div className="swiper freeSwiper">
-              <div className="swiper-wrapper freeSlider2">
-                <Swiper
-                  slidesPerView={3}
-                  spaceBetween={30}
-                  freeMode={true}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  modules={[FreeMode, Pagination]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>Slide 1</SwiperSlide>
-                  <SwiperSlide>Slide 2</SwiperSlide>
-                  <SwiperSlide>Slide 3</SwiperSlide>
-                  <SwiperSlide>Slide 4</SwiperSlide>
-                  <SwiperSlide>Slide 5</SwiperSlide>
-                  <SwiperSlide>Slide 6</SwiperSlide>
-                  <SwiperSlide>Slide 7</SwiperSlide>
-                  <SwiperSlide>Slide 8</SwiperSlide>
-                  <SwiperSlide>Slide 9</SwiperSlide>
-                </Swiper>
-                <h1>slider</h1>
-              </div>
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
-            </div>
+            <Swiper
+              navigation={true}
+              slidesPerView={5}
+              spaceBetween={0}
+              freeMode={true}
+              modules={[FreeMode, Navigation]}
+              className="freeSwiper"
+            >
+              {API?.free.map((elem) => {
+                return (
+                  <SwiperSlide key={elem.id}>
+                    <img src={elem.src} alt="free" onClick={(e) => test(e)} />
+                    <span>{elem.title}</span>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
         </div>
       </div>
