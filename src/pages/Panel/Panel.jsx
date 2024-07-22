@@ -10,6 +10,7 @@ const Panel = () => {
         <ul>
              <li><NavLink to="/slider">تنظیمات اسلایدر</NavLink></li>
              <li><NavLink to="/comment">تنظیمات نظرات کاربران</NavLink></li>
+             <li><NavLink to="/free">تنظیمات محتوای رایگان</NavLink></li>
         </ul>
     </div>
     </> );

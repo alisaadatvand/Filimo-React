@@ -1,5 +1,5 @@
 import "./Free.css";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -22,6 +22,18 @@ let test = (e) => {
 };
 
 const Free = ({ API }) => {
+  let [Free, setFree] = useState(null);
+  const fetchSlider = async () => {
+    let freeData = await fetch(
+      "http://localhost:1000/free"
+    );
+    let freeRes = await freeData.json();
+    setFree(freeRes);
+  };
+  useEffect(() => {
+    fetchSlider();
+  }, []);
+  console.log(Free);
   return (
     <>
       <div className="free">
@@ -38,7 +50,7 @@ const Free = ({ API }) => {
               modules={[FreeMode, Navigation]}
               className="freeSwiper"
             >
-              {API?.free.map((elem) => {
+              {Free?.map((elem) => {
                 return (
                   <SwiperSlide key={elem.id}>
                     <img src={elem.src} alt="free" onClick={(e) => test(e)} />

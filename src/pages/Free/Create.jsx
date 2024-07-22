@@ -2,27 +2,26 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import "./css/index.css";
 
 const Create = () => {
   const [image, setImage] = useState("");
-  const [alt, setAlt] = useState("");
+  const [title, setTitle] = useState("");
   let imageRef = useRef();
   let altRef = useRef();
   const clickHandler = (e) => {
     e.preventDefault();
-    const postSlider = async () => {
+    const postFree = async () => {
       try {
-        let res = await axios.post("http://localhost:1000/slider", {
+        let res = await axios.post("http://localhost:1000/free", {
           src: image,
-          alt: alt,
+          title: title,
         });
         console.log(res);
       } catch (error) {
         console.log(error.message);
       }
     };
-    postSlider();
+    postFree();
     imageRef.current.value = "";
     altRef.current.value = "";
     Swal.fire({
@@ -34,17 +33,15 @@ const Create = () => {
     });
   };
   useEffect(() => {
-    document.title = "create-slider";
+    document.title = "create-free";
   });
   return (
     <>
       <div className="create">
-        <h1>ساخت اسلایدر</h1>
+        <h1>ساخت محتوای رایگان</h1>
         <form action="#" method="post" onSubmit={clickHandler}>
           <div>
-            <label htmlFor="image">
-              لینک تصویر
-            </label>
+            <label htmlFor="image">لینک تصویر</label>
             <input
               type="text"
               placeholder="لینک...!"
@@ -63,14 +60,12 @@ const Create = () => {
             ) : null} */}
           </div>
           <div className="d-block mb-2">
-            <label htmlFor="alt">
-              توضیخ
-            </label>
+            <label htmlFor="alt">توضیخ</label>
             <input
               type="text"
               placeholder="توضیح...!"
               id="alt"
-              onChange={(e) => setAlt(e.target.value)}
+              onChange={(e) => setTitle(e.target.value)}
               ref={altRef}
             />
           </div>
@@ -79,18 +74,15 @@ const Create = () => {
               type="submit"
               className="btn submitBtn"
               value="تایید"
-            //   disabled={
-            //     image.length === 0 ||
-            //     alt.length === 0 ||
-            //     image.length < 5 ||
-            //     image.length > 100
-            //   }
+              //   disabled={
+              //     image.length === 0 ||
+              //     alt.length === 0 ||
+              //     image.length < 5 ||
+              //     image.length > 100
+              //   }
             />
           </div>
-          <Link
-            to="/slider"
-            className="btn detailsBtn"
-          >
+          <Link to="/free" className="btn detailsBtn">
             صفحه جزئیات
           </Link>
         </form>
