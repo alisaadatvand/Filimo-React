@@ -39,21 +39,22 @@ div.login{
             padding-right: 10px;
             box-sizing: border-box;
         }
-        input[type="submit"]{
-            all: unset;
-            margin-top: 10px;
-            width: fit-content;
-            background-color: green;
-            color: whitesmoke;
-            cursor: pointer;
-            border-radius: 10px;
-            font-size: 14px;
-            padding: 5px 10px;
-            box-sizing: border-box;
-            transition: 300ms;
-            &:hover{
-                transform: scale(85%);
-            }
+       
+    }
+    .btn-login{
+        all: unset;
+        margin-top: 10px;
+        width: fit-content;
+        background-color: green;
+        color: whitesmoke;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: 14px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        transition: 300ms;
+        &:hover{
+            transform: scale(85%);
         }
     }
 }
