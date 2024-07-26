@@ -1,5 +1,20 @@
+import { useEffect, useState } from "react";
 import "./Online.css";
 const Online = ({ API }) => {
+
+  let [Online, setOnline] = useState(null);
+  const fetchOnline = async () => {
+    let OnlineData = await fetch(
+      "http://localhost:1000/onlineFilms"
+    );
+    let OnlineRes = await OnlineData.json();
+    setOnline(OnlineRes);
+  };
+  useEffect(() => {
+    fetchOnline();
+  }, []);
+  console.log(Online);
+
   return (
     <div className="online">
       {API?.online.map((elem) => {
@@ -14,7 +29,7 @@ const Online = ({ API }) => {
             </div>
 
             <div className="onlineScroll">
-              {API?.onlineFilms.map((elem) => {
+              {Online?.map((elem) => {
                 return (
                   <div className="onlineItem" key={elem.id}>
                     <div className="onlineRight">

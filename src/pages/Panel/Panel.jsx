@@ -11,6 +11,7 @@ const Panel = () => {
              <li><NavLink to="/slider">تنظیمات اسلایدر</NavLink></li>
              <li><NavLink to="/comment">تنظیمات نظرات کاربران</NavLink></li>
              <li><NavLink to="/free">تنظیمات محتوای رایگان</NavLink></li>
+             <li><NavLink to="/online">تنظیمات اکران آنلاین</NavLink></li>
         </ul>
     </div>
     </> );
